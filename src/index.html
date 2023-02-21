@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;800&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/69d24a7ed4.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./styles.css" />
     <title>Team-Profile</title>
   </head>
@@ -22,17 +26,21 @@
     <header>
       <section class="hero is-primary">
         <div class="hero-body">
-          <p class="title">My Team</p>
+          <p class="title is-1">My Team</p>
         </div>
       </section>
     </header>
 
     <main>
-      <div class="tile">
-        <section>
-          <div class="card p-1 m-1">
-            <h3 class="name p-1 m-1"></h3>
-            <h4 class="job p-1 m-1">Manager</h4>
+      <div class="tile is-ancestor m-4 p-4">
+        <section class="tile is-parent p-1 m-2">
+          <div class="card tile is-child m-1">
+            <div class="has-background-primary-light">
+              <h3 class="name subtitle is-3 p-1 m-1 has-text-primary">Name</h3>
+              <h4 class="job subtitle is-5 p-1 m-1 has-text-primary">
+                <i class="fa-solid fa-mug-hot"></i> Manager
+              </h4>
+            </div>
             <div class="card-content p-1 m-1">
               <h5 class="id">ID:</h5>
               <h5 class="email">Email: <a href=""></a></h5>
@@ -40,10 +48,14 @@
             </div>
           </div>
         </section>
-        <section>
-          <div class="card p-1 m-1">
-            <h3 class="name p-1 m-1"></h3>
-            <h4 class="job p-1 m-1">Engineer</h4>
+        <section class="tile is-parent p-1 m-2">
+          <div class="card tile is-child m-1">
+            <div class="has-background-link-light">
+              <h3 class="name subtitle is-3 p-1 m-1 has-text-link">Name</h3>
+              <h4 class="job subtitle is-5 p-1 m-1 has-text-link">
+                <i class="fa-solid fa-glasses"></i> Engineer
+              </h4>
+            </div>
             <div class="card-content p-1 m-1">
               <h5 class="id">ID:</h5>
               <h5 class="email">Email: <a href=""></a></h5>
@@ -51,10 +63,14 @@
             </div>
           </div>
         </section>
-        <section>
-          <div class="card p-1 m-1">
-            <h3 class="name p-1 m-1"></h3>
-            <h4 class="job p-1 m-1">Intern</h4>
+        <section class="tile is-parent p-1 m-2">
+          <div class="card tile is-child m-1">
+            <div class="has-background-info-light">
+              <h3 class="name subtitle is-3 p-1 m-1 has-text-info">Name</h3>
+              <h4 class="job subtitle is-5 p-1 m-1 has-text-info">
+                <i class="fa-solid fa-user-graduate"></i> Intern
+              </h4>
+            </div>
             <div class="card-content p-1 m-1">
               <h5 class="id">ID:</h5>
               <h5 class="email">Email: <a href=""></a></h5>
