@@ -3,3 +3,17 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+}

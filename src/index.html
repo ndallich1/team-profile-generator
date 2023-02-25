@@ -18,7 +18,27 @@
       src="https://kit.fontawesome.com/69d24a7ed4.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      * {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      footer {
+        margin-top: auto;
+      }
+
+      body {
+        background-color: rgb(245, 245, 245);
+      }
+    </style>
     <title>Team-Profile</title>
   </head>
 
@@ -31,7 +51,8 @@
       </section>
     </header>
 
-    <main>
+    <main class="main">
+      <!--  -->
       <div class="tile is-ancestor m-4 p-4">
         <section class="tile is-parent p-1 m-2">
           <div class="card tile is-child m-1">
@@ -79,10 +100,15 @@
           </div>
         </section>
       </div>
+      <!--  -->
     </main>
-  </body>
 
-  <footer>
-    <p>Made with love by Nikki</p>
-  </footer>
+    <footer class="footer p-4 has-background-primary">
+      <div class="content pl-5 has-text-white">
+        <p>
+          Created by <a href="https://github.com/ndallich1">Nikki Dallich</a>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
