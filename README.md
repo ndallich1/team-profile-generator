@@ -22,7 +22,12 @@ A webpage generator for viewing team member's contact information quickly
 Answer each prompt in the terminal to start building your team. You will start by filling out manager info, then you can add engineers and interns to your team after answering all manager questions. When you are finished adding employees to your team, select "Finish building team" and an index.html file will be created for you!
 
 ![example of terminal prompts](./lib/images/terminal-prompts-example.png)
-![index.html output example]()
+![index.html output example](./lib/images/rendered-html-sample.png)
+![responsive index.html output example](./lib/images/rendered-html-sample-responsive.png)
+
+## Demo
+
+[Watch a demo here!](https://watch.screencastify.com/v/seDj7yDkEBgA1uDbUGbt)
 
 ## Credits
 
