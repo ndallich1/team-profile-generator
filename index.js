@@ -1,4 +1,3 @@
-const Employee = require("./lib/Employee");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const prompts = require("./lib/prompts");
@@ -25,7 +24,13 @@ const nextQuestion = () => {
   inquirer.prompt(prompts.menu).then((answers) => {
     if (answers.employeeType == "Engineer") engineerPrompts();
     if (answers.employeeType == "Intern") internPrompts();
-    if (answers.employeeType == "Finish building team") generateHTML();
+    if (answers.employeeType == "Finish building team") {
+      console.log("Team Created!");
+      const html = generateHTML(team);
+      fs.writeFile("index.html", html, (err) =>
+        err ? console.log(err) : console.log("Successfully created index.html!")
+      );
+    }
   });
 };
 
@@ -55,52 +60,52 @@ function createCard(team) {
   team.forEach((element) => {
     if (element.getRole() === "Manager") {
       template += `<section class="tile is-parent p-1 m-2">
-      <div class="card tile is-child m-1">
-        <div class="has-background-primary-light">
-          <h3 class="name subtitle is-3 p-1 m-1 has-text-primary">${element.getName()}</h3>
-          <h4 class="job subtitle is-5 p-1 m-1 has-text-primary">
-            <i class="fa-solid fa-mug-hot"></i> Manager
-          </h4>
+        <div class="card tile is-child m-1">
+          <div class="has-background-primary-light">
+            <h3 class="name subtitle is-3 p-1 m-1 has-text-primary">${element.getName()}</h3>
+            <h4 class="job subtitle is-5 p-1 m-1 has-text-primary">
+              <i class="fa-solid fa-mug-hot"></i> Manager
+            </h4>
+          </div>
+          <div class="card-content p-1 m-1">
+            <h5 class="id">ID: ${element.getId()}</h5>
+            <h5 class="email">Email: <a href="mail to:${element.getEmail()}"></a>${element.getEmail()}</h5>
+            <h5 class="officeNumber">Office Phone #: ${element.getOfficeNumber()}</h5>
+          </div>
         </div>
-        <div class="card-content p-1 m-1">
-          <h5 class="id">ID: ${element.getId()}</h5>
-          <h5 class="email">Email: <a href="mail to:${element.getEmail()}"></a>${element.getEmail()}</h5>
-          <h5 class="officeNumber">Office Phone #: ${element.getOfficeNumber()}</h5>
-        </div>
-      </div>
-    </section>`;
+      </section>`;
     } else if (element.getRole() === "Engineer") {
       template += `<section class="tile is-parent p-1 m-2">
-      <div class="card tile is-child m-1">
-        <div class="has-background-link-light">
-          <h3 class="name subtitle is-3 p-1 m-1 has-text-link">${element.getName()}</h3>
-          <h4 class="job subtitle is-5 p-1 m-1 has-text-link">
-            <i class="fa-solid fa-glasses"></i> Engineer
-          </h4>
+        <div class="card tile is-child m-1">
+          <div class="has-background-link-light">
+            <h3 class="name subtitle is-3 p-1 m-1 has-text-link">${element.getName()}</h3>
+            <h4 class="job subtitle is-5 p-1 m-1 has-text-link">
+              <i class="fa-solid fa-glasses"></i> Engineer
+            </h4>
+          </div>
+          <div class="card-content p-1 m-1">
+            <h5 class="id">ID: ${element.getId()}</h5>
+            <h5 class="email">Email: <a href="mail to:${element.getEmail()}"></a>${element.getEmail()}</h5>
+            <h5 class="github">Github: <a href="${element.getGithub()}"></a>${element.getGithub()}</h5>
+          </div>
         </div>
-        <div class="card-content p-1 m-1">
-          <h5 class="id">ID: ${element.getId()}</h5>
-          <h5 class="email">Email: <a href="mail to:${element.getEmail()}"></a>${element.getEmail()}</h5>
-          <h5 class="github">Github: <a href="${element.getGithub()}"></a>${element.getGithub()}</h5>
-        </div>
-      </div>
-    </section>`;
+      </section>`;
     } else if (element.getRole() === "Intern") {
       template += ` <section class="tile is-parent p-1 m-2">
-      <div class="card tile is-child m-1">
-        <div class="has-background-info-light">
-          <h3 class="name subtitle is-3 p-1 m-1 has-text-info">${element.getName()}</h3>
-          <h4 class="job subtitle is-5 p-1 m-1 has-text-info">
-            <i class="fa-solid fa-user-graduate"></i> Intern
-          </h4>
+        <div class="card tile is-child m-1">
+          <div class="has-background-info-light">
+            <h3 class="name subtitle is-3 p-1 m-1 has-text-info">${element.getName()}</h3>
+            <h4 class="job subtitle is-5 p-1 m-1 has-text-info">
+              <i class="fa-solid fa-user-graduate"></i> Intern
+            </h4>
+          </div>
+          <div class="card-content p-1 m-1">
+            <h5 class="id">ID: ${element.getId()}</h5>
+            <h5 class="email">Email: <a href="mail to:${element.getEmail()}"></a>${element.getEmail()}</h5>
+            <h5 class="school">School: ${element.getSchool()}</h5>
+          </div>
         </div>
-        <div class="card-content p-1 m-1">
-          <h5 class="id">ID: ${element.getId()}</h5>
-          <h5 class="email">Email: <a href="mail to:${element.getEmail()}"></a>${element.getEmail()}</h5>
-          <h5 class="school">School: ${element.getSchool()}</h5>
-        </div>
-      </div>
-    </section>`;
+      </section>`;
     }
   });
   return template;
